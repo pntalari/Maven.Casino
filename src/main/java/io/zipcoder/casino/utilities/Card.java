@@ -1,19 +1,28 @@
 package io.zipcoder.casino.utilities;
 
 public class Card {
+    // Instance Variables
     private String suit;
     private Integer value;
 
-    
+    // Constructors
 
+    public Card(String suit, Integer value) {
+        this.suit = suit;
+        this.value = value;
+    }
+
+    // Methods
 
     public String toString() {
-        return "";
+        return "" + suit + value;
     }
 
-    public void getValue() {
+    public Integer getValue() {
+        return this.value;
     }
 
-    public void getSuit() {
+    public String getSuit() {
+        return this.suit;
     }
 }
