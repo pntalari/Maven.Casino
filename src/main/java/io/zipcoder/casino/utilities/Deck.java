@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Deck {
     // Instance Variables
 
-    public ArrayList<Card> deckList;
+    protected ArrayList<Card> deckList;
     private final String[] suits = {"D", "H", "S", "C"};
     private final Integer[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
@@ -81,7 +81,7 @@ public class Deck {
         Integer numberOfCards = deckList.size();
         ArrayList<Card> shuffledDeck = new ArrayList<Card>();
         while(numberOfCards != 0){
-            int removeIndex = RandomNumber.getRandomNumber(numberOfCards) - 1;
+            int removeIndex = RandomNumber.getRandomNumber(numberOfCards--) - 1;
             shuffledDeck.add(this.deckList.get(removeIndex));
             this.deckList.remove(removeIndex);
         }
