@@ -37,17 +37,19 @@ public class ChoHanPlayer {
     /** construct the ChoHan eligible player list with players that have
          enough wallet balance to play the game */
     public ArrayList<ChoHanPlayer> playerListChoHan(ArrayList<Player> playerList) {
-       // ListIterator<Player> listIterator = playerList.listIterator();
-        int i =1;
+       ListIterator<Player> listIterator = playerList.listIterator();
+        Player playerObj = playerList.get(0);
+        int i =0;
         do {
-            Player playerObj = playerList.get(0);
-
             if (playerObj.getWallet() > 0) {
-                eligiblePlayerListCH.add(new ChoHanPlayer(playerObj.getName(), playerObj.getWallet(), playerObj.getPlayerNetGainLoss()));
+                eligiblePlayerListCH.add(new ChoHanPlayer(playerObj.getName(),
+                        playerObj.getWallet(), playerObj.getPlayerNetGainLoss()));
             }
             i++;
+            if(i<playerList.size())
+            playerObj = playerList.get(i);
         }
-        while (i<playerList.size());
+        while (i<=playerList.size());
 
         return eligiblePlayerListCH;
     }

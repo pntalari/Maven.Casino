@@ -1,6 +1,7 @@
 package io.zipcoder.casino.ChoHanTests;
 import io.zipcoder.casino.ChoHan.ChoHanPlayer;
 import io.zipcoder.casino.utilities.Player;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,10 +26,11 @@ public class ChoHanPlayerTest {
         playerList.add(player2);
         playerList.add(player3);
         //When
-        Player expectedPlayer = player3;
-
-       // Player actualPlayer = choHanPlayer.playerListChoHan(playerList);
+        ArrayList<Player> expectedList = playerList;
+        ArrayList<ChoHanPlayer> actualList = choHanPlayer.playerListChoHan(playerList);
+        playerList.remove(2);
         //Then
+        Assert.assertEquals(expectedList.size(),actualList.size());
     }
 
     @Test
