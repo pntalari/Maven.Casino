@@ -8,7 +8,7 @@ import java.util.ListIterator;
 public class ChoHanPlayer {
     private ArrayList<Player> playerList = new ArrayList<Player>();
     private ArrayList<ChoHanPlayer> eligiblePlayerListCH = new ArrayList<ChoHanPlayer>();
-    private Integer guessChoHanPlayer;
+    private Integer playerGuessCH;
 
     private String playerNameCH;
     private Integer walletBalanceCH;
@@ -53,6 +53,23 @@ public class ChoHanPlayer {
 
         return eligiblePlayerListCH;
     }
+
+    /** check the player guess is for even or odd
+     * @return integer guess*/
+    public Integer getPlayerGuess(String playerGuessIn){
+
+        if (playerGuessIn.equalsIgnoreCase("even"))
+        {
+            this.playerGuessCH = 2;
+        }
+        else if(playerGuessIn.equalsIgnoreCase("odd"))
+        {
+            this.playerGuessCH = 1;
+        }
+
+        return playerGuessCH;
+    }
+
 
     /** get method to return ChoHan eligible players */
     public ArrayList<ChoHanPlayer> getEligiblePlayerListCH() {

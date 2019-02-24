@@ -31,20 +31,6 @@ public class ChoHanGameTest {
         Assert.assertTrue(actualName);
     }
 
-    @Test
-    public void getplayerGuessTest(){
-        //Given
-        String PlayerGuessE = "Even";
-        String PlayerGuessO = "odd";
-        //When
-        Integer actualPlayerGuessE = choHanGame.getPlayerGuess(PlayerGuessE);
-        Integer actualPlayerGuessO = choHanGame.getPlayerGuess(PlayerGuessO);
-        Integer expectedPlayerGuessE = 2;
-        Integer expectedPlayerGuessO = 1;
-        //Then
-        Assert.assertEquals(expectedPlayerGuessE,actualPlayerGuessE);
-        Assert.assertEquals(expectedPlayerGuessO,actualPlayerGuessO);
-    }
 
 //    @Test
 //    public void getDiceResultTest(){

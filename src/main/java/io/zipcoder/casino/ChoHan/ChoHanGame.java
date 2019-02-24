@@ -48,7 +48,7 @@ public class ChoHanGame implements Game, GamblingGame {
 
         /** get the player guesses input */
         playerGuessIn = inOut.getStringInput("Please enter your guess: even or odd: ");
-        playerGuess = getPlayerGuess(playerGuessIn);
+        playerGuess = choHanPlayerObj.getPlayerGuess(playerGuessIn);
 
         /** get the player bets input */
         // get the number of dices to roll
@@ -58,21 +58,6 @@ public class ChoHanGame implements Game, GamblingGame {
         // update the players wallets
         // update the house wallet
 
-    }
-
-    /** check the player guess is for even or odd
-     * @return integer guess*/
-    public Integer getPlayerGuess(String playerGuessIn){
-        if (playerGuessIn.equalsIgnoreCase("even"))
-        {
-            this.playerGuess = 2;
-        }
-        else if(playerGuessIn.equalsIgnoreCase("odd"))
-        {
-            this.playerGuess = 1;
-        }
-
-        return playerGuess;
     }
 
 

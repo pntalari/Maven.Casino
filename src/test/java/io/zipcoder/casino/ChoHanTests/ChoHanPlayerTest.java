@@ -34,6 +34,21 @@ public class ChoHanPlayerTest {
     }
 
     @Test
+    public void getplayerGuessTest(){
+        //Given
+        String PlayerGuessE = "Even";
+        String PlayerGuessO = "odd";
+        //When
+        Integer actualPlayerGuessE = choHanPlayer.getPlayerGuess(PlayerGuessE);
+        Integer actualPlayerGuessO = choHanPlayer.getPlayerGuess(PlayerGuessO);
+        Integer expectedPlayerGuessE = 2;
+        Integer expectedPlayerGuessO = 1;
+        //Then
+        Assert.assertEquals(expectedPlayerGuessE,actualPlayerGuessE);
+        Assert.assertEquals(expectedPlayerGuessO,actualPlayerGuessO);
+    }
+
+    @Test
     public void updatePlayerWallet() {
     }
 
