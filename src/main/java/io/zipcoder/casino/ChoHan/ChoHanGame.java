@@ -20,9 +20,7 @@ public class ChoHanGame implements Game, GamblingGame {
     private String playerGuessIn = "";
     private Integer playerGuess;
 
-    private Scanner input;
-    private PrintStream output;
-    //private Console inOut = new Console(InputStream, PrintStream);
+    private Console inOut = new Console(System.in, System.out);
 
     // constructor with player list
     public ChoHanGame(ArrayList<Player> playerList) {
@@ -49,7 +47,7 @@ public class ChoHanGame implements Game, GamblingGame {
         // how to use the Console
 
         /** get the player guesses input */
-        playerGuessIn = input.nextLine();
+        playerGuessIn = inOut.getStringInput("Please enter your guess: even or odd: ");
         playerGuess = getPlayerGuess(playerGuessIn);
 
         /** get the player bets input */
