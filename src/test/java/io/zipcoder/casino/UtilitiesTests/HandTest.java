@@ -65,31 +65,14 @@ public class HandTest {
         ArrayList<Card> actual = hand.playAllCards(3);
         Card card2 = new Card("D", 6);
         ArrayList<Card> expected2 = new ArrayList<Card>();
+        expected2.add(card2);
         ArrayList<Card> actual2 = hand.getHandList();
 
         // Then
-        Assert.assertEquals(expected1, actual);
-        Assert.assertEquals(expected2, actual2);
+        Assert.assertEquals(expected1.toString(), actual.toString());
+        Assert.assertEquals(expected2.toString(), actual2.toString());
     }
 
-    @Test
-    public void playAllCardsTest2(){
-        // Given
-        ArrayList<Card> expected = new ArrayList<Card>();
-        Card card1 = new Card("D", 3);
-        Card card2 = new Card("D", 6);
-        expected.add(card1);
-        expected.add(card2);
-        Hand hand = new Hand(expected);
-        // When
-        ArrayList<Card> actual = hand.playAllCards("D");
-        ArrayList<Card> expected2 = new ArrayList<Card>();
-        ArrayList<Card> actual2 = hand.getHandList();
-
-        // Then
-        Assert.assertEquals(expected, actual);
-        Assert.assertEquals(expected2, actual2);
-    }
 
     @Test
     public void addCardToHandTest() {

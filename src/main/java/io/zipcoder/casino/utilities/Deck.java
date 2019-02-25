@@ -3,6 +3,7 @@ package io.zipcoder.casino.utilities;
 import io.zipcoder.casino.utilities.Card;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Deck {
     // Instance Variables
@@ -100,5 +101,14 @@ public class Deck {
             }
         }
         deckList = list;
+    }
+
+    @Override
+    public String toString() {
+        return "Deck{" +
+                "deckList=" + deckList +
+                ", suits=" + Arrays.toString(suits) +
+                ", values=" + Arrays.toString(values) +
+                '}';
     }
 }
