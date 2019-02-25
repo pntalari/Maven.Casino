@@ -7,7 +7,7 @@ public class Casino {
     public java.util.ArrayList playerList;
     public Integer keepPlaying;
     public Game currentGame;
-    private Integer houseBalance;
+    private Integer houseBalance =0;
 
     public static void main(String[] args) {
         // write your tests before you start fucking with this
