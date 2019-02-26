@@ -1,6 +1,7 @@
 package io.zipcoder.casino;
 
 
+import io.zipcoder.casino.ChoHan.ChoHanGame;
 import io.zipcoder.casino.Interfaces.Game;
 import io.zipcoder.casino.utilities.Console;
 import io.zipcoder.casino.utilities.Player;
@@ -71,26 +72,38 @@ public class Casino {
 //            // End sequence updates
 //
 //        }
-//        else if(nextAction.equals(4)){
-//            // Start ChoHan
-//            Game choHan = new ChoHanGame(playerList);
-//            choHan.start();
-//            // End sequence updates
-//
-//        }
-//        else if(nextAction.equals(5)){
-//            goToATM();
-//        }
-//        else if(nextAction.equals(6)){
-//            checkHouse();
-//        }
-//        else if(nextAction.equals(7)){
-//            addPlayer();
-//        }
-//        else{
-//            console.println("Either enter a valid option or get off the floor.");
-//        }
+        if(nextAction.equals(4)){
+            // Start ChoHan
+            ChoHanGame choHan = new ChoHanGame(playerList);
+            choHan.start();
+            // End sequence updates
+            updatePlayersWallets(choHan.getPlayerNetGain());
+            updateHouseBalance(choHan.getHouseCommission());
+        }
+        else if(nextAction.equals(5)){
+            goToATM();
+        }
+        else if(nextAction.equals(6)){
+            checkHouse();
+        }
+        else if(nextAction.equals(7)){
+            addPlayer();
+        }
+        else{
+            console.println("Either enter a valid option or get off the floor.");
+        }
     }
+
+    void updateHouseBalance(Integer houseCommission) {
+        houseBalance += houseCommission;
+    }
+
+    void updatePlayersWallets(ArrayList<Integer> playerNetGain) {
+        for (int i = 0; i < playerList.size(); i++){
+            playerList.get(i).updateWallet(playerNetGain.get(i));
+        }
+    }
+
 
     public void checkHouse() {
         console.println("The house has made %d tonight", houseBalance);
