@@ -11,6 +11,7 @@ public class Casino {
     public ArrayList<Player> playerList;
     public boolean exitFlag = false;
     public Game currentGame;
+
     private Integer houseBalance;
     Console console = new Console(System.in, System.out);
 
@@ -178,3 +179,4 @@ public class Casino {
         houseBalance = balance;
     }
 }
+
