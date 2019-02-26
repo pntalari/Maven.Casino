@@ -7,11 +7,6 @@ import io.zipcoder.casino.utilities.Player;
 import java.util.*;
 
 public class ChoHanPlayer extends Player{
-    /**
-     * instance variables
-     */
-
-    private Console inOut = new Console(System.in, System.out);
 
     /** ChoHan player constructor */
     public ChoHanPlayer(Player player) {
