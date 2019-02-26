@@ -99,6 +99,15 @@ public class Deck {
         deckList = list;
     }
 
+    public boolean isEmpty(){
+        if(deckList.size() == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         return "Deck{" +
