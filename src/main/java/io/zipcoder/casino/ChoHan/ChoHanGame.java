@@ -1,8 +1,6 @@
 package io.zipcoder.casino.ChoHan;
 
 import io.zipcoder.casino.Casino;
-import io.zipcoder.casino.Interfaces.GamblingGame;
-import io.zipcoder.casino.Interfaces.GamblingPlayer;
 import io.zipcoder.casino.Interfaces.Game;
 import io.zipcoder.casino.utilities.Console;
 import io.zipcoder.casino.utilities.Dice;
