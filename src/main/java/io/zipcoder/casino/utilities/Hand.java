@@ -5,6 +5,8 @@ import io.zipcoder.casino.utilities.Card;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Hand {
     // Instance Variables
@@ -108,5 +110,56 @@ public class Hand {
 
     public Boolean contains(Card card) {
         return this.handList.contains(card);
+    }
+
+    public boolean hasCard(Integer cardTocheck) {
+        for (Card card : handList) {
+            if (card.getValue().equals(cardTocheck))
+                return true;
+
+        }
+
+
+        return false;
+    }
+
+    public ArrayList<Card> getCards(Integer getcard) {
+
+        ArrayList<Card> retreiveCards = new ArrayList<Card>();
+
+        for (Card card : handList) {
+            if (card.getValue().equals(getcard))
+                retreiveCards.add(card);
+
+        }
+        handList.removeAll(retreiveCards);
+
+        return retreiveCards;
+    }
+
+
+    public void addtoHand(ArrayList<Card> cards){
+        handList.addAll(cards);
+    }
+
+    /** verify the cards in the hand matches in the book*/
+
+    public List<Card> bookEvalute(){
+        Collections.sort(handList);
+        ArrayList<Card> cardEvalu = new ArrayList<Card>();
+        for (int i = 0; i < handList.size()-3; i++) {
+            Card c1 = handList.get(i+0);
+            Card c2 = handList.get(i+1);
+            Card c3 = handList.get(i+2);
+            Card c4 = handList.get(i+3);
+            if(c1.getValue().equals(c2.getValue()) && c2.getValue().equals(c3.getValue()) && c3.getValue().equals(c4.getValue())) {
+                cardEvalu.add(c1);
+                cardEvalu.add(c2);
+                cardEvalu.add(c3);
+                cardEvalu.add(c4);
+            }
+
+        }
+        return cardEvalu;
     }
 }
