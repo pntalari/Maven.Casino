@@ -4,6 +4,8 @@ import io.zipcoder.casino.utilities.Card;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Stack;
 
 public class Deck {
     // Instance Variables
@@ -79,13 +81,7 @@ public class Deck {
      */
 
     public void shuffle() {
-        Integer numberOfCards = deckList.size();
-        ArrayList<Card> shuffledDeck = new ArrayList<Card>();
-        while(numberOfCards != 0){
-            int removeIndex = RandomNumber.getRandomNumber(numberOfCards--) - 1;
-            shuffledDeck.add(this.deckList.get(removeIndex));
-            this.deckList.remove(removeIndex);
-        }
+        Collections.shuffle(deckList);
     }
 
     /**
