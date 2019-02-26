@@ -13,19 +13,11 @@ public class ChoHanPlayer extends Player{
 
     private Console inOut = new Console(System.in, System.out);
 
-    /**Nullary constructor*/
-   public void ChoHanPlayer() {
-
-    }
-
     /** ChoHan player constructor */
     public ChoHanPlayer(Player player) {
         super(player.getName(), player.getWallet());
         super.playerNetGainLoss = 0;
     }
-
-    public void bet (Integer value)
-    {}
 
     /** get method to return ChoHan player wallet balance */
     public Integer getWalletBalanceChoHanPlayer() {

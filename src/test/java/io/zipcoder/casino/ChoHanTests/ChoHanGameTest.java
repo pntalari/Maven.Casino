@@ -10,10 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -61,7 +58,7 @@ public class ChoHanGameTest {
         ArrayList<ChoHanPlayer> actualPlayers = choHanGame.getCHPlayersList();
         //Then
         Assert.assertTrue(!actualPlayers.contains(player3));
-       // Assert.assertEquals(actualStr,expectedStr);
+        // Assert.assertEquals(actualStr,expectedStr);
     }
 
 //    @Test
@@ -104,8 +101,94 @@ public class ChoHanGameTest {
     @Test
     public void getHCommissionTest() {
         //Given
+        choHanGame = new ChoHanGame(PlayersList);
+        Integer beforeHCommission = choHanGame.getHouseCommission();
         //When
+        Integer afterHCommission = choHanGame.getHouseCommisionAmt(500);
         //Then
+        Boolean result = beforeHCommission < afterHCommission;
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void getWinnersCHTest() {
+        // Given
+        SortedMap<String, String> actualGuessList = new TreeMap<String, String>();
+        ArrayList<String> expectedWinners = new ArrayList();
+        ArrayList<String> actualWinners = new ArrayList();
+        //When
+        choHanGame = new ChoHanGame(PlayersList);
+        actualGuessList.put("Nirmala", "even");
+        actualGuessList.put("Will", "odd");
+        actualGuessList.put("Laxmi", "even");
+        actualGuessList.put("Charlie", "even");
+        actualGuessList.put("Sean", "odd");
+        expectedWinners.add("Nirmala");
+        expectedWinners.add("Laxmi");
+        expectedWinners.add("Charlie");
+        actualWinners = choHanGame.getWinnersCH(actualGuessList, 10);
+        Collections.sort(expectedWinners);
+        Collections.sort(actualWinners);
+        //Then
+        Assert.assertEquals(expectedWinners, actualWinners);
+
+    }
+
+    @Test
+    public void getLosersCHTest() {
+        // Given
+        SortedMap<String, String> actualGuessList = new TreeMap<String, String>();
+        ArrayList<String> expectedLossers = new ArrayList();
+        ArrayList<String> actualWinners = new ArrayList();
+        //When
+        choHanGame = new ChoHanGame(PlayersList);
+        actualGuessList.put("Nirmala", "even");
+        actualGuessList.put("Will", "odd");
+        actualGuessList.put("Laxmi", "even");
+        actualGuessList.put("Charlie", "even");
+        actualGuessList.put("Sean", "odd");
+        expectedLossers.add("Will");
+        expectedLossers.add("Sean");
+        actualWinners = choHanGame.getLosersCH(actualGuessList, 10);
+        Collections.sort(expectedLossers);
+        Collections.sort(actualWinners);
+        //Then
+        Assert.assertEquals(expectedLossers, actualWinners);
+
+    }
+
+    @Test
+    public void getWinnersBetSumTest() {
+        //Given
+        ArrayList<String> actualWinnersList = new ArrayList<String>();
+        //When
+        choHanGame = new ChoHanGame(PlayersList);
+        actualWinnersList.add("Nirmala");
+        actualWinnersList.add("Will");
+        actualWinnersList.add("Laxmi");
+        actualWinnersList.add("Charlie");
+        actualWinnersList.add("Sean");
+
+        SortedMap<String, Integer> actualBetList = new TreeMap<String, Integer>();
+        actualBetList.put("Nirmala", 20);
+        actualBetList.put("Will", 40);
+        actualBetList.put("Laxmi", 50);
+        actualBetList.put("Charlie", 30);
+        actualBetList.put("Sean", 50);
+        Integer expectedWinTotBet = 190;
+        Integer actualWinTotBet = choHanGame.getWinnersBetSum(actualWinnersList, actualBetList);
+        //Then
+        Assert.assertEquals(expectedWinTotBet, actualWinTotBet);
+    }
+
+    @Test
+    public void getPlayerNetGainTest() {
+
+    }
+
+    @Test
+    public void getWalletBalanceChoHanPlayerTest(){
+
     }
 
 }

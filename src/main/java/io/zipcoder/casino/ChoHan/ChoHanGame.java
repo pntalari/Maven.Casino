@@ -75,20 +75,6 @@ public class ChoHanGame {
             winnersBetSum = getWinnersBetSum(winnersList, getPlayerBetList());
             losersList = getLosersCH(getPlayerGuessList(), throwOutput);
 
-//            /** calculate and update each winner players wallets
-//             * each winning player winning amount = (each winner bet amount/sum of winners bets)* bet amount for this game */
-//            for (int i = 0; i < winnersList.size(); i++) {
-//                for (Map.Entry<String, Integer> entry : getPlayerBetList().entrySet()) {
-//                    if (winnersList.get(i).equalsIgnoreCase(entry.getKey())) {
-//                        int winnerBetAmt = entry.getValue();
-//                        double winPercent = winnerBetAmt / (double) winnersBetSum;
-//                        int winnerWalletAddition = (int) (winPercent * gameBetAmt);
-//                        this.choHanPlayer.setPlayerWalletBalance(entry.getKey(), winnerWalletAddition);
-//                        this.choHanPlayer.setNetGainLossPlayerCH(winnerWalletAddition);
-//                    }
-//                }
-//            }
-
 
             /** calculate and update each winner players wallets
              * each winning player winning amount = (each winner bet amount/sum of winners bets)* bet amount for this game */
@@ -166,7 +152,7 @@ public class ChoHanGame {
      *
      * @return houseCommissionAmount
      */
-    private Integer getHouseCommisionAmt(Integer gameBetAmt) {
+    public Integer getHouseCommisionAmt(Integer gameBetAmt) {
         Integer houseBalance = casinoObj.getHouseBalance();
         houseCommission += (int) (gameBetAmt * houseRate);
         casinoObj.setHouseBalance(houseBalance + houseCommission);
@@ -223,8 +209,7 @@ public class ChoHanGame {
         Integer throwOutput = diceObj.throwAndSum();
         if (throwOutput % 2 == 0) {
             inOut.println("The dice throw result for this game is Cho: " + throwOutput);
-        } else {
-            inOut.println("The dice throw result for this game is Han: " + throwOutput);
+        } else { inOut.println("The dice throw result for this game is Han: " + throwOutput);
         }
         return throwOutput;
     }
