@@ -40,7 +40,8 @@ public class ChoHanPlayer extends Player implements GamblingPlayer {
     }
 
     /**update CH player wallet, playerwallet and update netgainloss with the winning amount*/
-    public void setPlayerWalletBalance(Integer walletChangeAmt) {
+    public void setPlayerWalletBalance( Integer walletChangeAmt) {
+
         this.updateWallet(walletChangeAmt);
     }
 
@@ -50,6 +51,11 @@ public class ChoHanPlayer extends Player implements GamblingPlayer {
 
     public void setNetGainLossPlayerCH(Integer netGainLossPlayerCH) {
         this.playerNetGainLoss += netGainLossPlayerCH;
+    }
+
+    public void setCHPlayer(String playerName)
+    {
+        this.playerName = playerName;
     }
 
 }
