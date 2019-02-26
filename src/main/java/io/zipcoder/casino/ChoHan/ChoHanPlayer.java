@@ -14,6 +14,7 @@ public class ChoHanPlayer extends Player{
         super.playerNetGainLoss = 0;
     }
 
+    
     /** get method to return ChoHan player wallet balance */
     public Integer getWalletBalanceChoHanPlayer() {
         return this.getWallet();
