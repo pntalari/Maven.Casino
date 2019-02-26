@@ -1,10 +1,5 @@
 package io.zipcoder.casino.ChoHan;
-
-
-import io.zipcoder.casino.utilities.Console;
 import io.zipcoder.casino.utilities.Player;
-
-import java.util.*;
 
 public class ChoHanPlayer extends Player{
 
@@ -14,7 +9,7 @@ public class ChoHanPlayer extends Player{
         super.playerNetGainLoss = 0;
     }
 
-    
+
     /** get method to return ChoHan player wallet balance */
     public Integer getWalletBalanceChoHanPlayer() {
         return this.getWallet();
