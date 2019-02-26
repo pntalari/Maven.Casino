@@ -6,6 +6,8 @@ import io.zipcoder.casino.utilities.Console;
 import io.zipcoder.casino.utilities.Dice;
 import io.zipcoder.casino.utilities.Player;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.*;
 
 public class ChoHanGame{
@@ -282,6 +284,18 @@ public class ChoHanGame{
     public Integer getHouseCommission(){
         return this.houseCommission;
     }
+
+//    public Console getConsoleWithBufferedInputAndOutput(String input, ByteArrayOutputStream baos) {
+//
+//        if (input == null) {
+//            inOut = new Console(System.in, new PrintStream(baos));
+//        } else {
+//            ByteArrayOutputStream bais = new ByteArrayOutputStream(input.getBytes());
+//         //   ByteArrayInputStream bais = new ByteArrayInputStream(input.getBytes());
+//            inOut = new Console(bais, new PrintStream(baos));
+//        }
+//        return inOut;
+//    }
 
 }
 
