@@ -22,7 +22,7 @@ public class CrapsGame implements Game {
     CrapsPlayer crapsPlayer;
     Integer houseCommission = 0;
 
-   /* public CrapsGame(ArrayList<Player> playerList) {
+    public CrapsGame(ArrayList<Player> playerList) {
         this.playerList = playerList;
         for (Player player : playerList) {
             crapsPlayer = new CrapsPlayer(player);
@@ -30,7 +30,7 @@ public class CrapsGame implements Game {
                 playerListCraps.add(crapsPlayer);
             }
         }
-    } */
+    }
 
 
     public void start() {
@@ -306,10 +306,10 @@ public class CrapsGame implements Game {
         System.exit(0);
     }
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         CrapsGame testCraps = new CrapsGame();
         testCraps.start();
-    }
+    } */
 
 }
 
