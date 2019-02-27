@@ -182,7 +182,33 @@ public class ChoHanGameTest {
     }
 
     @Test
-    public void getWalletBalanceChoHanPlayerTest(){
+    public void setPlayerWalletBalanceTest(){
+        //Given
+        SortedMap<String, String> actualGuessList = new TreeMap<String, String>();
+        ArrayList<String> actualWinners = new ArrayList();
+        ArrayList<String> actualWinnersList = new ArrayList<String>();
+        //When
+        choHanGame = new ChoHanGame(PlayersList);
+        actualWinnersList.add("Nirmala");
+        actualWinnersList.add("Will");
+        actualWinnersList.add("Laxmi");
+        actualWinnersList.add("Charlie");
+        actualWinnersList.add("Sean");
+
+        SortedMap<String, Integer> actualBetList = new TreeMap<String, Integer>();
+        actualBetList.put("Nirmala", 20);
+        actualBetList.put("Will", 40);
+        actualBetList.put("Laxmi", 50);
+        actualBetList.put("Charlie", 30);
+        actualBetList.put("Sean", 50);
+        Integer expectedWinTotBet = 190;
+
+        actualGuessList.put("Nirmala", "even");
+        actualGuessList.put("Will", "odd");
+        actualGuessList.put("Laxmi", "even");
+        actualGuessList.put("Charlie", "even");
+        actualGuessList.put("Sean", "odd");
+        actualWinners = choHanGame.getLosersCH(actualGuessList, 10);
 
     }
 
