@@ -182,11 +182,6 @@ public class ChoHanGameTest {
     }
 
     @Test
-    public void getPlayerNetGainTest() {
-
-    }
-
-    @Test
     public void getWalletBalanceChoHanPlayerTest(){
 
     }
